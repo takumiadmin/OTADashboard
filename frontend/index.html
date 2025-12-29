@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Use the correct relative path to your image -->
+    <link rel="icon" type="image/png" href="./src/pages/tmc.png" />
+    <link rel="shortcut icon" type="image/png" href="./src/pages/tmc.png" />
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Takumi OTA Dashboard</title>
+    
+    <!-- JavaScript to force favicon refresh with correct path -->
+    <script>
+      // Force favicon refresh on page load
+      window.addEventListener('load', function() {
+        // Create a new link element
+        var link = document.querySelector("link[rel~='icon']");
+        if (!link) {
+          link = document.createElement('link');
+          link.rel = 'icon';
+          document.head.appendChild(link);
+        }
+        // Force reload with timestamp and correct path
+        link.href = './src/pages/tmc.png?t=' + new Date().getTime();
+      });
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
